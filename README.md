@@ -28,13 +28,13 @@ Assigns a variable to the view's data object.
 The variable's key.
 
 **key**  
-The variable's value.
+The variable's value. Can be string, any number, array, bool or null.
 
 ## Method Definition *reset*
 ```php
 reset(): void
 ```
-Resets the view's data object. Often not necessary to use.
+Resets the view's data object. Usually this it not actually necessary, but can help sometimes if you are dealing with several render sections on one page.
 
 ## Method Definition *render*
 ```php
@@ -52,7 +52,7 @@ Returns the fully rendered view.
 ```php
 display(string $headTemplate, string $title): void
 ```
-Finally displays the whole HTML page. It is necessary to call `render` before at least one time. The rendered view is always embeded to the page's HTML body element. `display` can only be called once.
+Finally displays the whole HTML page. It is necessary to call `render` at least once before. The rendered view is always embeded to the page's HTML body element. `display` can only be called once.
 ### Parameters
 **headTemplate**  
 The template name to embed into the HTML page's head element.
