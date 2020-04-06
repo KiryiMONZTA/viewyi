@@ -75,7 +75,7 @@ The template directory path relative to your project's root directory.
 **templateFileExtension (optional)**  
 Optional file extension of your template files, if you want to use something else than the default `.php`.
 
-The parameters can be provided by using the standard configuration file `{PROJECTSROOTDIR}/config/viewyi.ini` with the following contents:
+The parameters can be provided by using the standard configuration file `{PROJECTSROOTDIRECTORY}/config/viewyi.ini` with the following contents:
 ```ini
 [viewyi]
 baseUrl = {YOURBASEURL}
@@ -100,9 +100,9 @@ $viewyi = new \Kiryi\Viewyi\Engine([
 ## Templating
 - Use native PHP templates.
 - Therefore you may use any PHP alternative syntax control structure.
-- Print any data you have assigned with `<?=$d->{YOURVARIABLEKEY}?>`.
-- Build links with your base URL with `<a href='<?=$a>{YOURLINKRELATIVETOBASEURL}'>Linktext<a>`.
-- Include images with `<img src='<?=$i?>{YOURIMAGEINYOURIMAGEDIRECTORY}` />.
+- Print any data you have assigned by writing `<?=$d->{YOURVARIABLEKEY}?>`.
+- Build links with your base URL by writing `<a href='<?=$a>{YOURLINKRELATIVETOBASEURL}'>Linktext<a>`.
+- Include images by writing `<img src='<?=$i?>{YOURIMAGEINYOURIMAGEDIRECTORY}` />.
 
 ## Example
 *configuration/config.ini*
