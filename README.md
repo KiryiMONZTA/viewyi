@@ -73,9 +73,9 @@ The image directory path relative to your base URL.
 The template directory path relative to your project's root directory.
 
 **templateFileExtension (optional)**  
-Optional file extension of your template files if you want to use something else than the default `.php`.
+Optional file extension of your template files, if you want to use something else than the default `.php`.
 
-The parameters can be set up by using the standard configuration file `{PROJECTSROOTDIR}/config/viewyi.ini` with the following contents:
+The parameters can be provided by using the standard configuration file `{PROJECTSROOTDIR}/config/viewyi.ini` with the following contents:
 ```ini
 [viewyi]
 baseUrl = {YOURBASEURL}
