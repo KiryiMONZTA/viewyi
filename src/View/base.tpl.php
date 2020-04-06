@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?=$d->head?>
-    <title><?=$d->title?></title>
+<?=$d->head?>
+<title><?=$d->title?></title>
 </head>
 <body>
-    <?=$d->body?>
+<?=$d->body?>
 </body>
 </html>
