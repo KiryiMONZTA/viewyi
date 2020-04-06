@@ -52,7 +52,7 @@ Returns the fully rendered view.
 ```php
 display(string $headTemplate, string $title): void
 ```
-Finally displays the whole HTML page. It is necessary to call `render` before at least one time. The rendered view is always embeded to the page's HTML body element.
+Finally displays the whole HTML page. It is necessary to call `render` before at least one time. The rendered view is always embeded to the page's HTML body element. `display` can only be called once.
 ### Parameters
 **headTemplate**  
 The template name to embed into the HTML page's head element.

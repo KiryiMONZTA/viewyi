@@ -4,11 +4,16 @@ namespace Kiryi\Viewyi;
 
 use Kiryi\Viewyi\Helper;
 
-class Engine
+class Engine extends \Exception
 {
+    const ERRORMSG_RENDERNOTCALLED = 'VIEWYI SEQUENCE ERROR: Function "render" was not called before function "display"!';
+    const ERRORMSG_DISPLAYCALLEDTWICE = 'VIEWYI SEQUENCE ERROR: Function "display" was called twice!';
     const TEMPLATENAME_INTERNAL_BASE = 'base';
 
     private ?Helper\Builder $builder = null;
+
+    private bool $renderWasCalled = false;
+    private bool $displayWasCalled = false;
 
     private array $data = [];
     private string $view = '';
@@ -34,23 +39,30 @@ class Engine
     {
         $this->view .= $this->build($template);
 
+        $this->renderWasCalled = true;
+
         return $this->view;
     }
 
     public function display(string $headTemplate, string $title): void
     {
-        $data = [
-            'title' => $title,
-            'head' => $this->build($headTemplate),
-            'body' => $this->view,
-        ];
-
-        $display = $this->builder->build($this::TEMPLATENAME_INTERNAL_BASE, $data, false);
-        
-        $this->reset();
-        $this->view = '';
-
-        echo $display;
+        if ($this->renderWasCalled !== true) {
+            throw new \Exception($this::ERRORMSG_RENDERNOTCALLED);
+        } elseif ($this->displayWasCalled === true) {
+            throw new \Exception($this::ERRORMSG_DISPLAYCALLEDTWICE);
+        } else {
+            $data = [
+                'title' => $title,
+                'head' => $this->build($headTemplate),
+                'body' => $this->view,
+            ];
+    
+            $display = $this->builder->build($this::TEMPLATENAME_INTERNAL_BASE, $data, false);
+            
+            $this->displayWasCalled = true;
+    
+            echo $display;
+        }
     }
 
     private function build(string $template): string
