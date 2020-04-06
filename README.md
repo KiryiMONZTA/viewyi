@@ -108,7 +108,7 @@ $viewyi = new \Kiryi\Viewyi\Engine([
 *configuration/config.ini*
 ```ini
 [viewyi]
-baseUrl = https://exampledomain.com
+baseUrl = https://viewyi-example.com
 imagePath = img
 templateDirectory = src/View
 templateFileExtension = .tpl.php
@@ -117,14 +117,16 @@ templateFileExtension = .tpl.php
 ```html
 <link rel='stylesheet' href='<?=$a?>css/style.min.css' />
 <link rel='shortcut icon' href='<?=$i?>favicon.png' />
+
 ```
 *src/View/home.tpl.php*
 ```html
-<img src='<?=$i?>logo.png` />
+<img src='<?=$i?>logo.png' />
 <h1><?=$d->headline?></h1>
 <?php foreach($d->paragraphs as $paragraph): ?>
-    <p><?=$paragraph?></p>
+<p><?=$paragraph?></p>
 <?php endforeach; ?>
+
 ```
 *src/Controller/HomeController.php*
 ```php
@@ -136,9 +138,23 @@ $viewyi->assign('paragraphs', [
     'Just follow this example.',
 ]);
 $viewyi->render('home');
-$view->display('head', 'Welcome');
+$viewyi->display('head', 'Welcome');
 ```
 will generate the HTML5 page:
 ```html
-qweqweqweqweqwe
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='https://viewyi-example.com/css/style.min.css' />
+<link rel='shortcut icon' href='https://viewyi-example.com/img/favicon.png' />
+<title>Welcome</title>
+</head>
+<body>
+<img src='https://viewyi-example.com/img/logo.png' />
+<h1>Welcome To My Page</h1>
+<p>I want to show you the VIEWYI View Engine.</p>
+<p>It is very easy to use.</p>
+<p>Just follow this example.</p>
+</body>
+</html>
 ```
