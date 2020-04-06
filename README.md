@@ -101,8 +101,8 @@ $viewyi = new \Kiryi\Viewyi\Engine([
 - Use native PHP templates.
 - Therefore you may use any PHP alternative syntax control structure.
 - Print any data you have assigned by writing `<?=$d->{YOURVARIABLEKEY}?>`.
-- Build links with your base URL by writing `<a href='<?=$a>{YOURLINKRELATIVETOBASEURL}'>Linktext<a>`.
-- Include images by writing `<img src='<?=$i?>{YOURIMAGEINYOURIMAGEDIRECTORY}` />.
+- Build links with your base URL by writing `<a href='<?=$a>{YOURLINKRELATIVETOBASEURL}'>{LINKTEXT}<a>`.
+- Include images by writing `<img src='<?=$i?>{YOURIMAGEINYOURIMAGEDIRECTORY}'/>`.
 
 ## Example
 *configuration/config.ini*
