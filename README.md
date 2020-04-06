@@ -61,13 +61,13 @@ The template name to embed into the HTML page's head element.
 The title of the current page set to the HTML page's title element.
 
 ## Initialization
-You have to provide the engine at least three parameters as well as an optional fourth.
+You have to provide the engine at least three mandatory parameters as well as an optional fourth.
 
 **baseUrl**  
 The base URL of your web application.
 
 **imagePath**  
-The image directory path relative your base URL.
+The image directory path relative to your base URL.
 
 **templateDirectory**  
 The template directory path relative to your project's root directory.
