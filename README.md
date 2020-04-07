@@ -1,5 +1,5 @@
 # Kiryi's VIEWYI
-A native PHP view engine for web applications..
+A native PHP view engine for web applications.
 
 ## Installation
 ```bash
