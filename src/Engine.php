@@ -29,6 +29,15 @@ class Engine extends \Exception
         $this->data[$key] = $value;
     }
 
+    public function render(string $template): string
+    {
+        $this->view .= $this->build($template);
+
+        $this->renderWasCalled = true;
+
+        return $this->view;
+    }
+
     public function reset(): string
     {
         $currentView = $this->view;
@@ -39,15 +48,6 @@ class Engine extends \Exception
         return $currentView;
     }
 
-    public function render(string $template): string
-    {
-        $this->view .= $this->build($template);
-
-        $this->renderWasCalled = true;
-
-        return $this->view;
-    }
-
     public function display(string $headTemplate, string $title): void
     {
         if ($this->renderWasCalled !== true) {
@@ -55,6 +55,7 @@ class Engine extends \Exception
         } elseif ($this->displayWasCalled === true) {
             throw new \Exception($this::ERRORMSG_DISPLAYCALLEDTWICE);
         } else {
+            
             $data = [
                 'title' => $title,
                 'head' => $this->build($headTemplate),
