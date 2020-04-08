@@ -12,7 +12,7 @@ First initialize the engine in one of three possible ways. See [Initialization](
 ## Constructor Definition
 
 ```php
-__construc($config)
+__construct($config)
 ```
 ### Parameters
 **config**  
