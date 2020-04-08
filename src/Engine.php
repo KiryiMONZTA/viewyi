@@ -21,7 +21,6 @@ class Engine extends \Exception
     public function __construct($config = null)
     {
         $initializer = new Helper\Initializer($config);
-        
         $this->builder = new Helper\Builder($initializer->getConfig());
     }
 
@@ -30,9 +29,14 @@ class Engine extends \Exception
         $this->data[$key] = $value;
     }
 
-    public function reset(): void
+    public function reset(): string
     {
+        $currentView = $this->view;
+
+        $this->view = '';
         $this->data = [];
+
+        return $currentView;
     }
 
     public function render(string $template): string

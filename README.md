@@ -30,12 +30,6 @@ The variable's key.
 **key**  
 The variable's value. Can be string, any number, array, bool or null.
 
-## Method Definition *reset*
-```php
-reset(): void
-```
-Resets the view's data object. Usually this it not actually necessary, but can help sometimes if you are dealing with several render sections on one page.
-
 ## Method Definition *render*
 ```php
 render(string $template): string
@@ -47,6 +41,15 @@ The template name to use as render base.
 
 ### Return Values
 Returns the fully rendered view.
+
+## Method Definition *reset*
+```php
+reset(): string
+```
+Resets the view's data object and view object. This helps dealing with large pages and especially in case of nested templates.
+
+### Return Values
+Returns the current fully rendered view.
 
 ## Method Definition *display*
 ```php
