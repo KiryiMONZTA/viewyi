@@ -20,7 +20,7 @@ class Engine extends \Exception
 
     public function __construct($config = null)
     {
-        $initializer = (new Helper\Initializer($config));
+        $initializer = new Helper\Initializer($config);
         
         $this->builder = new Helper\Builder($initializer->getConfig());
     }
