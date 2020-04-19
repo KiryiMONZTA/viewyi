@@ -27,7 +27,7 @@ Assigns a variable to the view's data object.
 **key**  
 The variable's key.
 
-**key**  
+**value**  
 The variable's value. Can be string, any number, array, bool or null.
 
 ## Method Definition *render*
