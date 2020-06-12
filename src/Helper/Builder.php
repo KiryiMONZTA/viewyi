@@ -68,6 +68,13 @@ class Builder extends \Exception
 
     private function createViewData(array $data): object
     {
-        return json_decode(json_encode($data));
+        if (
+            count($data) <= 0
+            || $data === null
+        ) {
+            return new \StdClass();
+        } else {
+            return json_decode(json_encode($data));
+        }
     }
 }

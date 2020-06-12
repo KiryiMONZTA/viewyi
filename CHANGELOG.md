@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2020-06-12
+### Fixed
+- `Builder` empty array led to wrong return type, since it did not get converted to object.
+
 ## [1.1.1] - 2020-04-24
 ### Fixed
 - Parameter in manual had wrong name.
